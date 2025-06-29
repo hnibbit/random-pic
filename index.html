@@ -196,7 +196,7 @@
       const savedMode = localStorage.getItem('nightMode');
       const isNight = savedMode === 'true';
       if (isNight) {
-        document.body.classList.add('night-mode');
+        document.documentElement.classList.add('night-mode');
       }
       document.getElementById('themeToggle').checked = isNight;
     };
