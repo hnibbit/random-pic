@@ -21,6 +21,18 @@
       font-size: 16px;
       cursor: pointer;
     }
+    .night-mode {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    .night-mode img {
+      border: 2px solid #555;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    .night-mode button {
+      background-color: #ffffff;
+      color: #000000;
+    }
   </style>
 </head>
 <body>
@@ -28,12 +40,19 @@
   <img id="prize" src="" alt="Random Pic">
   <br>
   <button onclick="location.reload()">Find Another</button>
+  <button onclick="toggleNightMode()">Toggle Night Mode</button>
 
   <script>
     const max = 3213;
     const n = Math.floor(Math.random() * max) + 1;
     const url = `https://sudokubliss.com/Prizes/H${n}.jpg`;
     document.getElementById('prize').src = url;
+
+    /* Script to toggle night mode */
+    function toggleNightMode() {
+      document.body.classList.toggle('night-mode');
+    }
+    
   </script>
 </body>
 </html>
