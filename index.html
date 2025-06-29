@@ -91,7 +91,7 @@
     
     /* EMOJI ICON */
     .slider::after {
-      content: "🌞";
+      content: "🌙"; /* When in Light Mode, shows moon to switch to night */
       position: absolute;
       top: 2px;
       right: 6px;
@@ -110,7 +110,7 @@
     
     /* SWITCH EMOJI TO MOON WHEN CHECKED */
     .switch input:checked + .slider::after {
-      content: "🌙";
+      content: "🌞"; /* When in Night Mode, shows sun to switch to day */
       left: 6px;
       right: auto;
     }
@@ -123,7 +123,7 @@
   <button onclick="location.reload()">Find Another</button>
   <div class="theme-toggle" title="Toggle Night Mode">
     <label class="switch">
-      <input type="checkbox" onclick="toggleNightMode()" id="themeToggle">
+      <input type="checkbox" onclick="toggleNightMode()" id="themeToggle" aria-label="Toggle Night Mode">
       <span class="slider"></span>
     </label>
   </div>
