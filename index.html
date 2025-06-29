@@ -70,7 +70,7 @@
       position: absolute;
       top: 0; left: 0;
       right: 0; bottom: 0;
-      background-color: #ccc;
+      background-color: #aaa; /* Darker than previous #ccc so 🌙 stands out more. #888 for darker still */
       border-radius: 26px;
       cursor: pointer;
       transition: background-color 0.4s;
@@ -139,7 +139,18 @@
     function toggleNightMode() {
       const isNight = document.body.classList.toggle('night-mode');
       document.getElementById('themeToggle').checked = isNight;
+      localStorage.setItem('nightMode', isNight);
     }
+  
+    // Load saved mode on page load
+    window.onload = function () {
+      const savedMode = localStorage.getItem('nightMode');
+      const isNight = savedMode === 'true';
+      if (isNight) {
+        document.body.classList.add('night-mode');
+      }
+      document.getElementById('themeToggle').checked = isNight;
+    };
     
   </script>
 </body>
