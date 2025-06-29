@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Prize Image</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      background: #f7f7f7;
+    }
+    img {
+      max-width: 90%;
+      max-height: 80vh;
+      margin-top: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Random Pic</h1>
+  <img id="prize" src="" alt="Random Prize">
+  <br>
+  <button onclick="location.reload()">Try Another</button>
+
+  <script>
+    const max = 3213;
+    const n = Math.floor(Math.random() * max) + 1;
+    const url = `https://sudokubliss.com/Prizes/H${n}.jpg`;
+    document.getElementById('prize').src = url;
+  </script>
+</body>
+</html>
